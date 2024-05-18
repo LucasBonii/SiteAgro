@@ -1,0 +1,30 @@
+/* CSS personalizado para o efeito de escurecimento */
+.background-image {
+    background-image: url('/static/fotos/colorful-farm.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Define a altura da seção para ocupar toda a altura da página */
+    overflow: hidden;
+    position: relative; /* Adicionado para garantir que o elemento ::before seja posicionado corretamente */
+}
+
+.background-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Altere a opacidade aqui conforme necessário */
+}
+
+body {
+    background-image: url('/static/fotos/cement-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; /* Remova as margens padrão do corpo */
+    padding: 0; /* Remova o preenchimento padrão do corpo */
+    font-family: Arial, sans-serif; /* Defina a fonte padrão */
+    color: #fff; /* Defina a cor do texto como branco */
+}
