@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% include "navbar.html" %}
+
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-md-12 p-0">
+            <div class="background-image position-relative">
+                <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                    <p class="fs-1">Aqui na Agrimax</p>
+                    <p class="fs-5">Oferecemos os melhores insumos agrícolas para impulsionar sua produção! Com produtos de alta qualidade e suporte especializado, estamos aqui para ajudá-lo a alcançar o máximo rendimento em sua safra!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione mais conteúdo abaixo da imagem, se necessário -->
+    <div class="row">
+        <div class="container p-4 d-flex justify-content-center">
+            <p class="fs-1">Confira nossos serviços:</p>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="card mx-5" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='fotos/lavoura1.jpeg') }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text">Atendimento.</p>
+        </div>
+    </div>
+
+    <div class="card mx-5" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='fotos/lavoura2.jpeg') }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text">Melhores produtos.</p>
+        </div>
+    </div>
+
+    <div class="card mx-5" style="width: 18rem;">
+        <img src="{{ url_for('static', filename='fotos/lavoura3.jpeg') }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text">Entrga rapida.</p>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-white mt-5 py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Localização</h5>
+                <!-- Aqui você pode adicionar um mapa da localização, substituindo o conteúdo abaixo pelo código do mapa -->
+                <p>Mapa da Localização</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Instagram</h5>
+                <!-- Substitua "SEU_INSTAGRAM" pelo seu nome de usuário do Instagram -->
+                <a href="https://www.instagram.com/SEU_INSTAGRAM" class="text-white">Siga-nos no Instagram</a>
+            </div>
+            <div class="col-md-4">
+                <h5>Contato</h5>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+                <p>Email: seuemail@example.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* CSS personalizado para o efeito de escurecimento */
+    .background-image {
+        background-image: url('{{ url_for('static', filename='fotos/colorful-farm.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Define a altura da seção para ocupar toda a altura da página */
+        overflow: hidden;
+    }
+
+    .background-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Altere a opacidade aqui conforme necessário */
+    }
+</style>
+{% endblock %}
