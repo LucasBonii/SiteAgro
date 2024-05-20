@@ -28,3 +28,63 @@ body {
     font-family: Arial, sans-serif; /* Defina a fonte padrão */
     color: #fff; /* Defina a cor do texto como branco */
 }
+
+.previsao-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #f9f9f9; /* Cor de fundo da tabela */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra da tabela */
+    width: 100%; /* Largura total da tabela */
+    max-width: 700px; /* Largura máxima da tabela */
+}
+
+th, td {
+    border: 1px solid #d0cbcb; /* Adiciona bordas visíveis a todas as células */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #d1cccc;
+    font-weight: bold;
+}
+
+.previsao-imagem {
+    max-width: 50px; /* Largura máxima das imagens */
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+}
+
+footer {
+    width: 100%;
+    overflow: hidden;
+    background-color: #333333; /* Ajuste a cor de fundo do rodapé conforme necessário */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar {
+    width: 100%;
+}

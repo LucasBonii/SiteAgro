@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
+
 {% block body %}
-{% include "navbar.html" %}
 
 <header>
     <div class="container-fluid p-0">
@@ -16,7 +16,6 @@
             </div>
         </div>
 
-        <!-- Adicione mais conteúdo abaixo da imagem, se necessário -->
         <div class="row">
             <div class="container p-4 d-flex justify-content-center">
                 <p class="fs-1">O que oferecemos?</p>
@@ -49,18 +48,39 @@
         </div>
     </div>
 </div>
-
-{% if previsao %}
-    {% for previsao in previsoes_tempo %}
-        <div class="previsao-tempo">
-            <p>Data: {{ previsao.data_previsao }}</p>
-            <p>Probabilidade de chuva: {{ previsao.probabilidade_chuva }}</p>
-            <img src="{{ url_for('static', filename='fotos/iconestempo/' + previsao.icone_tempo + '.png') }}" alt="Icone Tempo">
-        </div>
-    {% endfor %}
+<div class="my-5"></div>
+{% if previsoes_tempo %}
+    <h1 class="justify-content-center fs-3">Previsão do Tempo para Chopinzinho/PR</h1>
+    <div class="previsao-container rounded">
+        <table>
+            <thead>
+                <tr>
+                    {% for previsao in previsoes_tempo %}
+                        <th>{{ previsao.data_previsao }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for previsao in previsoes_tempo %}
+                        <td><img src="{{ url_for('static', filename='fotos/iconestempo/' + previsao.icone_tempo + '.png') }}" alt="Ícone Tempo" class="previsao-imagem"></td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for previsao in previsoes_tempo %}
+                        <td>Chuva:</td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for previsao in previsoes_tempo %}
+                        <td>{{ previsao.probabilidade_chuva }}%</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
 {% endif %}
 
 
 
-{% include "rodape.html" %}
 {% endblock %}

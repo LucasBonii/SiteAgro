@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+
 
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -11,9 +11,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto mx-5">
-                <a class="nav-link mx-2 active" aria-current="page" href="#">Sobre</a>
-                <a class="nav-link mx-2" href="#">Serviços</a>
-                <a class="nav-link mx-2" href="#">Contato</a>
+                <a class="nav-link mx-2 active" aria-current="page" href="{{ url_for('sobre') }}">Sobre</a>
+                <a class="nav-link mx-2" href="{{ url_for('servicos') }}">Serviços</a>
+                <a class="nav-link mx-2" href="{{ url_for('contato') }}">Contato</a>
             </div>
         </div>
     </div>

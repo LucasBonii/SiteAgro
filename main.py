@@ -1,14 +1,14 @@
 from flask import Flask, render_template, url_for
 import requests
-import datetime
+from datetime import datetime
 
 app = Flask(__name__)
 
 @app.route("/")
 def homepage():
     try:
-        #token = "eb9cd83f807d446ba483048dea6c8dee"
-        token =  "8211122e34754b639a85fe95abeb0b02"
+        token = "eb9cd83f807d446ba483048dea6c8dee"
+        #token =  "8211122e34754b639a85fe95abeb0b02"
 
         link = f"https://api.weatherbit.io/v2.0/forecast/daily?city=Chopinzinho&key={token}"
         requisicao = requests.get(link)
@@ -18,17 +18,30 @@ def homepage():
         for item in req_json["data"]:
             data = item['valid_date']
             data_obj = datetime.strptime(data, '%Y-%m-%d')
-            data_formatada = data_obj.strftime('%d-%m')
+            data_formatada = data_obj.strftime('%d/%m')
 
             previsao = {
                 "probabilidade_chuva": item["pop"],
                 "icone_tempo": item["weather"]["icon"],
-                "data_previsao": data_formatada
+            "data_previsao": data_formatada
             }
             previsoes_tempo.append(previsao)
         return render_template("home.html", previsoes_tempo=previsoes_tempo)
     except:
-        return render_template("home.html")
+       return render_template("home.html")
+    
+@app.route("/sobre")
+def sobre():
+    return render_template("sobre.html")
+
+@app.route("/servicos")
+def servicos():
+    return render_template("servicos.html")
+
+
+@app.route("/contato")
+def contato():
+    return render_template("contato.html")
     
 if __name__ == "__main__":
     app.run(debug=True)

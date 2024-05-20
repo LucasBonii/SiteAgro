@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+    .about-section {
+        display: flex;
+        align-items: center;
+    }
+    .about-text {
+        font-family: 'Century Gothic', sans-serif;
+    }
+    .about-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+</style>
+{% endblock head %}
+
+
+{% block body %}
+
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="display-4 text-center fw-semibold mb-4">Sobre Nós</h1>
+            <p class="lead text-justify">Bem-vindo à <span class="text-success fw-semibold">Agrimax</span>, sua parceira confiável no setor agrícola. Com uma história enraizada em <span class="text-success fw-semibold">21 anos</span> de experiência e dedicação, nós oferecemos as melhore soluções para sua produção.</p>
+            <p class="text-justify" style="font-family: 'Century Gothic'">Na  <span class="text-success fw-semibold">Agrimax</span>, acreditamos que o futuro da agricultura está na interseção entre a tradição e a inovação. Nossa experiente equipe trabalha para fornecer não apenas insumos agrícolas de alta qualidade, mas também suporte técnico especializado para ajudá-lo a atingir o máximo potencial da sua safra.</p>
+            <p class="text-justify" style="font-family: 'Century Gothic'">Nosso objetivo é ser mais do que apenas um fornecedor, queremos ser seu parceiro de confiança em cada estágio do ciclo de cultivo. Nossa missão é simples: promover o sucesso dos nossos clientes.</p> 
+            <p class="text-justify" style="font-family: 'Century Gothic'"><span class="fw-semibold">Junte-se a nós</span> e descubra como podemos ajudá-lo a cultivar um futuro mais próspero e sustentável para a sua empresa agrícola!</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='fotos/fotosobre.jpeg') }}" class="img-fluid rounded" alt="Sobre Nós">
+        </div>
+    </div>
+</section>
+
+
+{% endblock body %}
